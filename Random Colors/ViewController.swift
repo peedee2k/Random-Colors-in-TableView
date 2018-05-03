@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) //as! ColorsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
         
         cell.backgroundColor = randomColorsArray[indexPath.row]
         return cell
