@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="bvl-9P-mnC" customClass="ColorsCell" customModule="Random_Colors" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="bvl-9P-mnC" customClass="MyCell" customModule="Random_Colors" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bvl-9P-mnC" id="eA1-TA-G55">
@@ -48,27 +48,39 @@
                     </view>
                     <navigationItem key="navigationItem" id="X5T-FM-euf"/>
                     <connections>
-                        <segue destination="Yyw-Ib-kjh" kind="show" identifier="segue" id="JvB-gf-9Sw"/>
+                        <outlet property="myTableView" destination="zVY-H2-arR" id="qDN-DH-Kxm"/>
+                        <segue destination="Yyw-Ib-kjh" kind="presentation" identifier="segue" id="aRa-om-D6Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="107"/>
+            <point key="canvasLocation" x="1061.5999999999999" y="106.59670164917542"/>
         </scene>
         <!--Color Controller-->
         <scene sceneID="cyt-N6-vIy">
             <objects>
-                <viewController id="Yyw-Ib-kjh" customClass="ColorController" customModule="Random_Colors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorController" id="Yyw-Ib-kjh" customClass="ColorController" customModule="Random_Colors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1C1-hB-WoN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-bC-8CC">
+                                <rect key="frame" x="130" y="319" width="115" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Magic Button"/>
+                                <connections>
+                                    <action selector="magicButton:" destination="Yyw-Ib-kjh" eventType="touchUpInside" id="9WY-fO-pTC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.69930013020833337" green="0.79383680555555558" blue="0.81852213541666663" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="Dps-oo-FNO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iXK-hU-cl9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKc-PH-YoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="107"/>
+            <point key="canvasLocation" x="1796" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TW2-hO-JcQ">

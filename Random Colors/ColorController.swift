@@ -8,12 +8,25 @@
 
 import UIKit
 
-class ColorController: UIViewController {
+protocol Colors {
+    func mybackgroundColor(color: UIColor)
+}
 
+class ColorController: UIViewController {
+    
+    var delegate: Colors?
+
+    @IBAction func magicButton(_ sender: Any) {
+    
+       self.delegate?.mybackgroundColor(color: self.view.backgroundColor!)
+        dismiss(animated: true) 
+        
+    }
+    var newbackgroundColor: UIColor?
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        newbackgroundColor = view.backgroundColor
 
     }
 

@@ -13,6 +13,7 @@
 		8223E218209B52A0003F2494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8223E217209B52A0003F2494 /* Assets.xcassets */; };
 		8223E21B209B52A0003F2494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8223E219209B52A0003F2494 /* LaunchScreen.storyboard */; };
 		8223E225209B5E00003F2494 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223E224209B5E00003F2494 /* ColorController.swift */; };
+		822584A5209CD15300FAA545 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822584A4209CD15300FAA545 /* MyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8223E21A209B52A0003F2494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8223E21C209B52A0003F2494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8223E224209B5E00003F2494 /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
+		822584A4209CD15300FAA545 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				8223E210209B529E003F2494 /* AppDelegate.swift */,
 				8223E212209B529E003F2494 /* ViewController.swift */,
+				822584A4209CD15300FAA545 /* MyCell.swift */,
 				8223E214209B529E003F2494 /* Main.storyboard */,
 				8223E224209B5E00003F2494 /* ColorController.swift */,
 				8223E217209B52A0003F2494 /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8223E213209B529E003F2494 /* ViewController.swift in Sources */,
+				822584A5209CD15300FAA545 /* MyCell.swift in Sources */,
 				8223E211209B529E003F2494 /* AppDelegate.swift in Sources */,
 				8223E225209B5E00003F2494 /* ColorController.swift in Sources */,
 			);

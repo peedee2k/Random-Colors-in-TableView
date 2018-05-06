@@ -8,27 +8,44 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, Colors {
 
-   var randomColorsArray = [UIColor]()
+    @IBOutlet weak var myTableView: UITableView!
+    
+    var randomColorsArray = [UIColor]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetColor))
+        
         createRandomColor()
         }
     
+    @objc func resetColor() {
+        randomColorsArray.removeAll()
+        createRandomColor()
+        print("000000")
+        myTableView.reloadData()
+    }
+    
+    
+   
     
     func createRandomColor() {
        for _ in 0...49 {
+        
             let redRandom = CGFloat(arc4random_uniform(UInt32(255)))/255
+        
             let greenRandom = CGFloat(arc4random_uniform(UInt32(255)))/255
+        
             let blueRandom = CGFloat(arc4random_uniform(UInt32(255)))/255
+        
 
             let randomColor = UIColor(red: redRandom, green: greenRandom, blue: blueRandom, alpha: 1)
             randomColorsArray.append(randomColor)
-            
-        }
         
+        }
+      
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,22 +53,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyCell
         
         cell.backgroundColor = randomColorsArray[indexPath.row]
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //setupColor()
         let cell = randomColorsArray[indexPath.row]
+    
         performSegue(withIdentifier: "segue", sender: cell)
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue" {
             let colorController = segue.destination as! ColorController
             colorController.view.backgroundColor = sender as? UIColor
-            
+            colorController.delegate = self
+
         }
+    }
+    
+
+    func mybackgroundColor(color: UIColor) {
+        let cell = MyCell()
+        print("123456")
+        
+        cell.backgroundColor = color
+        
+        myTableView.reloadData()
+        
+        print("123")
     }
 
 }
