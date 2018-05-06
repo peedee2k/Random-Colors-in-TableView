@@ -24,13 +24,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @objc func resetColor() {
         randomColorsArray.removeAll()
         createRandomColor()
-        print("000000")
+        
         myTableView.reloadData()
     }
-    
-    
    
-    
     func createRandomColor() {
        for _ in 0...49 {
         
@@ -60,7 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //setupColor()
+        
         let cell = randomColorsArray[indexPath.row]
     
         performSegue(withIdentifier: "segue", sender: cell)
@@ -78,14 +75,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
     func mybackgroundColor(color: UIColor) {
-        let cell = MyCell()
-        print("123456")
-        
-        cell.backgroundColor = color
+        randomColorsArray.removeAll()
+        for _ in 0...49 {
+            randomColorsArray.append(color)
+        }
         
         myTableView.reloadData()
-        
-        print("123")
     }
 
 }
