@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
         
         cell.backgroundColor = randomColorsArray[indexPath.row]
         
@@ -79,7 +79,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         for _ in 0...49 {
             randomColorsArray.append(color)
         }
-        
         myTableView.reloadData()
     }
 
